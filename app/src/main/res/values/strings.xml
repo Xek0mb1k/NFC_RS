@@ -1,10 +1,14 @@
 <resources>
     <string name="app_name">NFCRS</string>
-    <string name="edit_text_text">Data will be here</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="edit_text_text">Choose mode</string>
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="error">Error</string>
     <string name="nfc_not_available">NFC not available</string>
     <string name="you_don_t_have_an_nfc_module">You don\'t have an NFC module</string>
     <string name="ok">OK</string>
+    <string name="data_reading">Data reading</string>
+    <string name="data_sending">Data sending</string>
+    <string name="read">Read</string>
+    <string name="send">Send</string>
 </resources>

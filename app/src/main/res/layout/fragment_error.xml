@@ -43,6 +43,8 @@
             android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
+            android:textColor="?attr/titleTextColor"
             android:layout_gravity="center_horizontal"
             android:layout_marginStart="44dp"
             android:layout_marginEnd="44dp"

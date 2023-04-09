@@ -3,11 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainFragment">
+    tools:context=".MainFragment"
+    android:background="?attr/backgroundColor">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity">
@@ -19,15 +18,14 @@
             android:layout_margin="24dp"
             android:layout_weight="1"
             android:autofillHints=""
-            android:background="@color/purple_200"
+            android:background="@drawable/edit_text_background"
             android:gravity="top"
             android:hint="@string/edit_text_text"
             android:inputType="textCapSentences|textMultiLine"
-            android:maxLength="2000"
-            android:padding="10dp"
-            app:autoSizeMaxTextSize="30sp"
-            app:autoSizeMinTextSize="5sp"
-            app:autoSizeTextType="uniform"
+            android:padding="20dp"
+            android:scrollbars="vertical"
+            android:scrollHorizontally="true"
+
             app:layout_constraintBottom_toTopOf="@+id/read_data_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -36,54 +34,54 @@
         <Button
             android:id="@+id/read_data_button"
             style="@style/ButtonStyle"
-            android:text="Read"
-            app:layout_constraintBottom_toTopOf="@+id/textView"
+            android:background="@drawable/button_background"
+            android:text="@string/read"
+            android:textColor="?attr/titleTextColor"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/modeTextView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/send_data_button" />
 
         <Button
             android:id="@+id/send_data_button"
-            android:layout_marginStart="24dp"
             style="@style/ButtonStyle"
-            android:text="Send"
-            app:layout_constraintBottom_toTopOf="@+id/textView"
+            android:layout_marginStart="24dp"
+            android:background="@drawable/button_background"
+            android:elevation="2dp"
+            android:text="@string/send"
+            android:textColor="?attr/titleTextColor"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/modeTextView"
             app:layout_constraintEnd_toStartOf="@+id/read_data_button"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent" />
 
         <View
-            android:id="@+id/view"
+            android:id="@+id/animation_circle"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginEnd="12dp"
 
-            android:background="@color/purple_200"
-            app:layout_constraintBottom_toBottomOf="@+id/textView"
-            app:layout_constraintEnd_toStartOf="@+id/textView"
+            android:background="@drawable/animation_circle"
+            app:layout_constraintBottom_toBottomOf="@+id/modeTextView"
+            app:layout_constraintEnd_toStartOf="@+id/modeTextView"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/textView" />
+            app:layout_constraintTop_toTopOf="@+id/modeTextView"
+            android:visibility="invisible"/>
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/modeTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="50dp"
-            android:text="Data reading"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/view"
-
-            />
-
-        <androidx.constraintlayout.widget.Group
-            android:id="@+id/group"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:constraint_referenced_ids="view,textView" />
+            app:layout_constraintStart_toEndOf="@id/animation_circle"
+            android:visibility="invisible"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
