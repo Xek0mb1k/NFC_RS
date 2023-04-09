@@ -11,4 +11,7 @@
     <string name="data_sending">Data sending</string>
     <string name="read">Read</string>
     <string name="send">Send</string>
+    <string name="nfc_disabled">NFC disabled</string>
+    <string name="enable_nfc_in_your_device_settings">Enable NFC in your device settings</string>
+    <string name="enable_nfc">Enable NFC</string>
 </resources>

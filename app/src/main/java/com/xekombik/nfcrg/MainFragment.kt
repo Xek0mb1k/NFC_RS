@@ -1,30 +1,34 @@
 package com.xekombik.nfcrg
 
+import android.content.Context
 import android.graphics.drawable.AnimationDrawable
+import android.nfc.NfcManager
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.VISIBLE
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.xekombik.nfcrg.databinding.FragmentMainBinding
+
 
 class MainFragment : Fragment() {
     private var _binding: FragmentMainBinding? = null
 
     private val binding get() = _binding!!
 
-        override fun onCreateView(
+    override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
         _binding = FragmentMainBinding.inflate(inflater, container, false)
         val animCircle = binding.animationCircle.background as AnimationDrawable
+
+        val manager = context?.getSystemService(Context.NFC_SERVICE) as NfcManager
+        val adapter = manager.defaultAdapter
+
         binding.sendDataButton.setOnClickListener {
             sendData()
-
-
             animCircle.start()
         }
 
